@@ -27,17 +27,19 @@ test("splits into two of two", () => {
   ]);
 });
 
-test("splits into two, one of two and another of three", () => {
+test("splits into two of two and one of one", () => {
   expect(split(["a", "b", "c", "d", "e"], 2)).toEqual([
     ["a", "b"],
-    ["c", "d", "e"],
+    ["c", "d"],
+    ["e"],
   ]);
 });
 
-test("splits into three, two of five and another of seven", () => {
+test("splits into three of five and another of two", () => {
   expect(split(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q"], 3)).toEqual([
     ["a", "b", "c", "d", "e"],
     ["f", "g", "h", "i", "j"],
-    ["k", "l", "m", "n", "o", "p", "q"],
+    ["k", "l", "m", "n", "o"],
+    ["p", "q"],
   ]);
 });

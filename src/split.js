@@ -19,13 +19,12 @@ export default function split(array, numberOfChuncks) {
   let chunks = [];
   let index = 0;
   for (let i = 1; i <= numberOfChuncks; i += 1) {
-    if (i < numberOfChuncks) {
-      chunks = [...chunks, array.slice(index, index + quotient)];
-    } else {
-      chunks = [...chunks, array.slice(index, index + quotient + remainder)];
-    }
-
+    chunks = [...chunks, array.slice(index, index + quotient)];
     index += quotient;
+  }
+
+  if (remainder > 0) {
+    chunks = [...chunks, array.slice(index)];
   }
 
   return chunks;
